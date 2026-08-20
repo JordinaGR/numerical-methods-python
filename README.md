@@ -1,151 +1,175 @@
-# Càlcul Numèric
+# Numerical Methods in Python
 
-Aquest repositori conté diferents implementacions d'algoritmes de **càlcul numèric** en Python i un notebook d'**àlgebra lineal numèrica**. Els continguts estan organitzats en els següents blocs:
+A collection of numerical methods and algorithms implemented in Python for solving problems in numerical analysis, linear algebra, interpolation, numerical integration, ordinary differential equations, and partial differential equations.
 
-### 1. Equacions no lineals
+The repository is primarily intended as a learning and reference resource, with implementations designed to illustrate the underlying numerical algorithms rather than replace established scientific-computing libraries.
 
-1. **Mètode de Newton-Raphson** — resolució numèrica d'equacions no lineals.
+## Overview
 
-   * Fitxer: `newton_raphson_eq_no_lineals.py`
+This project contains implementations of fundamental numerical methods, including:
 
-2. **Mètode de Newton per a sistemes d'equacions no lineals** — resolució de sistemes mitjançant el vector de funcions i la seva matriu jacobiana.
+* Nonlinear equation solving
+* Linear systems and matrix factorization
+* Numerical interpolation and approximation
+* Cubic splines
+* Numerical integration and quadrature
+* Ordinary differential equations (ODEs)
+* Partial differential equations (PDEs)
+* Iterative methods for linear systems
+* Numerical linear algebra
 
-   * Fitxer: `metode_newton_eq_no_lineals.py`
+The repository also includes a Jupyter Notebook covering several numerical linear algebra algorithms with examples and comparisons against NumPy implementations.
 
-3. **Mètode de Newton-Raphson per a sistemes no lineals i Newton-Raphson modificat**.
+## Contents
 
-   * Fitxer: `newton_raphson_eq_no_lineals.py`
+### 1. Nonlinear Equations
 
-### 2. Mínims quadrats i interpolació
+Methods for finding numerical solutions to nonlinear equations and systems:
 
-4. **Mètode de mínims quadrats** — aproximació d'un conjunt de dades mitjançant polinomis de diferents graus.
+* Newton–Raphson method for nonlinear equations
+* Newton's method for systems of nonlinear equations
+* Modified Newton–Raphson methods
 
-5. **Interpolació polinòmica** — interpolació a partir d'un conjunt de punts.
+**Relevant files:**
 
-6. **Comparació entre mínims quadrats i interpolació**, incloent-hi el càlcul i estudi dels errors.
+* `newton_raphson_eq_no_lineals.py`
+* `metode_newton_eq_no_lineals.py`
 
-   * Fitxer: `minims_quadrats_i_interpolacio.py`
+### 2. Least Squares and Interpolation
 
-### 3. Splines
+Methods for approximating and interpolating data:
 
-7. **Splines cúbics** — construcció de splines cúbics a partir d'un conjunt de punts.
+* Polynomial least-squares approximation
+* Polynomial interpolation
+* Error analysis and comparison between approximation methods
 
-8. **Càlcul de derivades als punts** — aproximació de les derivades mitjançant diferències finites.
+**Relevant file:**
 
-9. **Spline cúbic de tipus Hermite (`C1`)** — construcció a partir dels valors de la funció i les seves derivades.
+* `minims_quadrats_i_interpolacio.py`
 
-10. **Spline cúbic (`C2`)** — construcció mitjançant `CubicSpline`.
+### 3. Cubic Splines
 
-* Fitxer: `splines.py`
+Implementations and examples involving spline interpolation:
 
-### 4. Quadratura numèrica
+* Cubic spline construction
+* Derivative approximation using finite differences
+* Cubic Hermite splines
+* `C2` cubic splines
 
-11. **Quadratura de Gauss** — càlcul dels nodes i pesos de Gauss per a diferents nombres de punts d'integració.
+**Relevant file:**
 
-* Fitxer: `quadraturaGauss.py`
+* `splines.py`
 
-12. **Quadratures numèriques** — implementació i estudi de diferents tècniques de quadratura.
+### 4. Numerical Quadrature
 
-* Fitxer: `quadratures.py`
+Numerical integration methods, including:
 
-13. **Regla del trapezi composta**.
+* Gaussian quadrature
+* Composite trapezoidal rule
+* Composite Simpson's rule
+* Composite Gaussian quadrature
 
-14. **Regla de Simpson composta**.
+**Relevant files:**
 
-15. **Quadratura de Gauss composta**.
+* `quadraturaGauss.py`
+* `quadratures.py`
+* `quadratures_trapeziCompost_SimpsonComp_GaussComp.py`
 
-* Fitxer: `quadratures_trapeziCompost_SimpsonComp_GaussComp.py`
+### 5. Ordinary Differential Equations
 
-### 5. Equacions diferencials ordinàries (EDOs)
+Numerical methods for initial-value and boundary-value problems:
 
-16. **Mètode d'Euler explícit** — resolució numèrica de problemes de valor inicial.
+* Explicit Euler method
+* Backward Euler method
+* Fourth-order Runge–Kutta (RK4)
+* Euler's method for systems of ODEs
+* Heun's method
+* Shooting method
 
-17. **Mètode d'Euler enrere** — implementació implícita del mètode d'Euler.
+**Relevant files:**
 
-18. **Mètode de Runge-Kutta de quart ordre (RK4)**.
+* `EDOs_RungeKutta4_Euler.py`
+* `EulerEdos.py`
+* `Edo_Heune.py`
+* `shootingMethod.py`
 
-* Fitxer: `EDOs_RungeKutta4_Euler.py`
+For example, the ODE implementations include explicit Euler, RK4, and an implicit backward Euler method, with error comparisons against analytical or reference solutions.
 
-19. **Mètode d'Euler per a sistemes d'EDOs**.
+### 6. Partial Differential Equations
 
-* Fitxer: `EulerEdos.py`
+Finite-difference approaches for PDE problems, including:
 
-20. **Mètode de Heun** — mètode de segon ordre basat en una predicció i una correcció.
+* One-dimensional diffusion equation
+* Explicit Euler time integration
+* Dirichlet boundary conditions
+* Neumann boundary conditions
+* Explicit and implicit discretizations
+* Finite-difference methods
 
-* Fitxer: `Edo_Heune.py`
+**Relevant files:**
 
-21. **Mètode de tir (Shooting Method)** — resolució d'un problema de contorn mitjançant la conversió a un problema de valor inicial i l'ajust de les condicions inicials.
+* `EDPs_Neumann_Dirichlet.py`
+* `EDPs_euler.py`
+* `FD1D_diffusionEq.py`
 
-* Fitxer: `shootingMethod.py`
+### 7. Numerical Linear Algebra
 
-### 6. Equacions diferencials parcials (EDPs)
+The repository includes a dedicated Jupyter Notebook covering fundamental numerical linear algebra algorithms.
 
-22. **Equació de difusió 1D** — discretització espacial mitjançant diferències finites i evolució temporal.
+Topics include:
 
-23. **Mètode d'Euler explícit per a EDPs**.
+#### Triangular Systems
 
-24. **Condicions de Dirichlet i Neumann** — tractament de diferents condicions de contorn.
+* Forward substitution
+* Backward substitution
+* Forward substitution for unit lower-triangular matrices
 
-25. **Mètode explícit per a condicions de Dirichlet**.
+#### Gaussian Elimination and LU Factorization
 
-26. **Mètode implícit per a condicions de Dirichlet**.
+* Gaussian elimination
+* LU factorization
+* Doolittle factorization
+* LU factorization with partial pivoting
+* Partial pivoting
+* Matrix inversion using LU factorization
 
-* Fitxer: `EDPs_Neumann_Dirichlet.py`
+#### Matrix Factorizations
 
-27. **Discretització de l'equació de difusió amb condicions de Dirichlet i Neumann**.
+* Cholesky factorization
+* `A = LDLᵀ` factorization
+* QR factorization
+* Modified Gram–Schmidt
+* Householder transformations
 
-28. **Mètode d'Euler cap endavant per a l'evolució temporal**.
+#### Vector and Matrix Norms
 
-* Fitxer: `EDPs_euler.py`
+* 1-norm
+* 2-norm
+* Infinity norm
+* p-norm
+* Matrix 1-norm
+* Matrix infinity norm
+* Frobenius norm
 
-29. **Mètode de diferències finites per a l'equació de difusió 1D**.
+#### Iterative Methods
 
-* Fitxer: `FD1D_diffusionEq.py`
+* Jacobi method
+* Gauss–Seidel method
+* Successive Over-Relaxation (SOR)
+* Gradient method
+* Conjugate gradient method
 
----
+**Notebook:**
 
-# Àlgebra lineal numèrica
+* `algebra_lineal_numerica.ipynb`
 
-## 1. Resolució de sistemes triangulars
+The notebook implements these algorithms directly and includes numerical examples and comparisons with NumPy routines.
 
-1. **Substitució enrere (`triU`)** — per a matrius triangulars superiors.
-2. **Substitució endavant (`triL`)** — per a matrius triangulars inferiors.
-3. **Substitució endavant amb diagonal unitària (`triL_uns_diagonal`)**.
+## Requirements
 
-### 2. Eliminació de Gauss i factoritzacions
+The code is written in Python and uses standard scientific-computing packages such as:
 
-4. **Eliminació de Gauss sense pivotatge (`elimGaussresolucio`)** — transforma el sistema en triangular i després aplica `triU`.
-5. **Factorització LU (`factLU`)** — obté les matrius `L` i `U`.
-6. **Factorització de Doolittle (`doolittle`)** — factorització `A = LU`, amb diagonal de `L` igual a 1.
-7. **Factorització PA = LU amb pivotatge parcial (`factPALU`)**.
-8. **Pivotatge parcial esglaonat (`pivotatge_parcial_esglaonat`)** — inclou també el recompte de permutacions per calcular el determinant.
-9. **Càlcul de la inversa mitjançant LU (`inversaLU`)** — resolent diversos sistemes triangulars.
-
-### 3. Factoritzacions per a matrius especials
-
-10. **Factorització de Cholesky (`cholesky`)** — per a matrius simètriques definides positives.
-11. **Factorització `A = LDLᵀ`**.
-
-### 4. Factorització QR
-
-12. **Gram-Schmidt modificat (`gram_schmidt`)** — calcula `A = QR`, amb `Q` ortonormal i `R` triangular superior.
-13. **Transformacions de Householder (`matHouseholder`, `factHouseholder`)** — altra manera d'obtenir la factorització QR.
-14. **Householder per resoldre sistemes (`Householder`)** — aplica les transformacions a `A` i `b`, obté un sistema triangular i el resol amb `triU`.
-
-### 5. Normes
-
-15. **Norma 1 vectorial (`norma1`)**.
-16. **Norma 2 vectorial (`norma2`)**.
-17. **Norma infinit vectorial (`normainf`)**.
-18. **Norma p (`normap`)**.
-19. **Norma 1 matricial (`norma1Matricial`)**.
-20. **Norma infinit matricial (`normaInfMatricial`)**.
-21. **Norma de Frobenius (`normaFrobMatricial`)**.
-
-### 6. Mètodes iteratius per a sistemes lineals
-
-22. **Mètode de Jacobi (`jacobi`)** — mètode iteratiu per resoldre sistemes lineals.
-23. **Mètode de Gauss-Seidel (`gaussseidel`)** — utilitza immediatament els valors actualitzats.
-24. **Mètode de relaxació / SOR (`omegarelaxacio`)** — introdueix el paràmetre `ω`.
-25. **Mètode del gradient (`Gradient`)** — per a matrius simètriques definides positives.
-26. **Mètode del gradient conjugat** — per a matrius simètriques definides positives.
+* [NumPy](https://numpy.org/)
+* [SciPy](https://scipy.org/)
+* [Matplotlib](https://matplotlib.org/)
+* [Jupyter](https://jupyter.org/) for the notebook
